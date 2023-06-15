@@ -1,0 +1,41 @@
+
+#
+structures:
+  normal: #name of the island to be pasted
+    Citizens:
+      npc1:
+        type: PLAYER
+        commands:
+          - npc select %npc%
+          - npc look --preplayer
+        location:
+          ==: org.bukkit.Location
+          world: SuperiorWorld
+          x: 6.0
+          y: 1.0
+          z: 4.0
+          pitch: 0.0
+          yaw: 0.0
+    WorldEdit:
+      schematic1:
+        name: custom_land
+
+    MythicMobs:
+      mob1:
+        name: customMobName
+        #level: 1
+
+
+    #HMCLeaves:
+    #  leaves-schematic1:
+    #    name: palm_tree
+    #    coordinate:
+    #      x: 0.0
+    #      y: 0.0
+    #      z: 0.0
+
+
+
+
+
+

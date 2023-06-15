@@ -1,0 +1,22 @@
+name: SSBStructures
+version: '${version}'
+main: gg.bckd00r.community.ssbstructures.SSBStructures
+api-version: 1.19
+description: 'sssss'
+commands:
+  ssbstructures:
+    aliases:
+      - ssbs
+      - ssstructure
+    description: 'dddddd'
+    permission: ssbstructures.admin.commands
+
+
+softdepend:
+  - Citizens
+  - WorldEdit
+  - MythicMobs
+
+
+depend:
+  - SuperiorSkyblock2
