@@ -24,29 +24,10 @@ public class CitizensHook {
     //display-name
     //cordinate
 
-    public CitizensHook(Island island, ConfigurationSection section) {
+    public CitizensHook(ConfigurationSection section, Island island) {
         this.citizensSection = section;
         this.island = island;
 
-        /*
-        if (section.isConfigurationSection("coordinate")) {
-            ConfigurationSection coordSection = section.getConfigurationSection("coordinate");
-            if (coordSection == null)
-                return;
-
-         */
-
-        for (String NpcSectionName : citizensSection.getKeys(false)) {
-            if (citizensSection.isConfigurationSection(NpcSectionName)) {
-                ConfigurationSection configData = citizensSection.getConfigurationSection(NpcSectionName);
-                if (configData == null)
-                    continue;
-
-                this.configData = configData;
-
-
-            }
-        }
     }
 
             //coordinate = new Coordinate(coordSection);
@@ -64,7 +45,6 @@ public class CitizensHook {
                 Location configLocation = configData.getLocation("location");
 
                 List<String> commands = configData.getStringList("commands");
-
                 if (configLocation == null) {
                     System.out.println("ERROR: SSBStructures/Citizens/" + NpcSectionName + " has location data is error!");
                     continue;
@@ -73,11 +53,6 @@ public class CitizensHook {
                 Location center = island.getCenterPosition().getBlock().getLocation();
                 Location spawnLoc = center.clone().add(configLocation);
 
-                //Bukkit.broadcastMessage(center + "   -----   " + configLocation + "   -------   " + center.clone().add(configLocation));
-                //Location centerLocation = new Location(configLocation.getWorld(), center.)
-                //CoordinateCalc hesap = new CoordinateCalc(new Coordinate((double) center.getX(), (double) center.getX(), (double) center.getX()), )
-
-                //CitizensAPI.removeNamedNPCRegistry();
                 NPC npc = CitizensAPI.getNPCRegistry().createNPC(type, name);
                 for (String c : commands) {
                     String cmd = c.replace("%npc%", String.valueOf(npc.getId()));
@@ -86,8 +61,6 @@ public class CitizensHook {
                 npc.spawn(spawnLoc);
             }
         }
-        //npc.spawn(spawnLoc);getString
-        //Bukkit.broadcastMessage(NpcSectionName);
     }
 
 
