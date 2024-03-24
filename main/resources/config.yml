@@ -1,0 +1,89 @@
+#
+structures:
+  normal: # name of the island to be pasted
+    Citizens:
+      npc1:
+        name: npcIdName
+        type: PLAYER
+        commands:
+          - npc select %npc%
+          - npc skin bckd00r
+          - npc name
+          - npc gravity
+          - npc look
+          - npc look --perplayer true
+        location:
+          ==: org.bukkit.Location
+          world: SuperiorWorld
+          x: 6.0
+          y: 1.0
+          z: 4.0
+          pitch: -0.75
+          yaw: 123.0
+    Oraxen:
+      furniture1:
+        oraxen_item: chair
+        location:
+          ==: org.bukkit.Location
+          world: SuperiorWorld
+          x: 11.500
+          y: 0.500
+          z: 7.500
+          pitch: 0.0
+          yaw: 0.0
+    WorldEdit:
+      schematic1:
+        name: palm_tree.schem
+        location:
+          ==: org.bukkit.Location
+          world: SuperiorWorld
+          x: 11.500
+          y: 0.500
+          z: 7.500
+          pitch: 0.0
+          yaw: 0.0
+    MythicMobs:
+      mob1:
+        name: StaticallyChargedSheep
+        level: 1
+        count: 1
+        location:
+          ==: org.bukkit.Location
+          world: SuperiorWorld
+          x: 6.0
+          y: 1.0
+          z: 4.0
+          pitch: -0.75
+          yaw: 123.0
+
+regions:
+  normal: #islandSchematicSection
+    customregion1:
+      region-interaction-permission: island.region.interaction.permission
+      entering:
+        permission: island.region.enter
+        first-enter-commands:
+          - say %player% first join the region! %region%
+        commands:
+          - say %player% entered %region%!
+          - say %player% regiona girdi!
+          - say %region%
+      leaving:
+        commands:
+          - say %player% leaves region!
+      maxloc:
+        ==: org.bukkit.Location
+        world: SuperiorWorld
+        x: 4.0
+        y: 3.0
+        z: -6.0
+        pitch: 0.0
+        yaw: 0.0
+      minloc:
+        ==: org.bukkit.Location
+        world: SuperiorWorld
+        x: 2.0
+        y: 1.0
+        z: -3.0
+        pitch: 0.0
+        yaw: 0.0

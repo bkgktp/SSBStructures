@@ -1,0 +1,23 @@
+name: SSBStructures
+version: '${version}'
+main: gg.bckd00r.community.ssbstructures.SSBStructures
+api-version: 1.13
+description: This plugin does so much stuff it can't be contained!
+load: POSTWORLD
+author: bckd00r
+website: aphernix.com
+prefix: SSBStructures
+
+libraries:
+  - dev.jorel:commandapi-bukkit-shade:9.2.0
+
+softdepend:
+  - Citizens
+  - WorldEdit
+  - MythicMobs
+  - Oraxen
+  - ItemsAdder
+
+depend:
+  - CommandAPI
+  - SuperiorSkyblock2
